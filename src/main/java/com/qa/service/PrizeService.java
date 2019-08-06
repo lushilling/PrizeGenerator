@@ -2,6 +2,6 @@ package com.qa.service;
 
 public interface PrizeService {
 	
-	String prizeGenerator();
+	String prizeGenerator(String accountNumber);
 
 }
