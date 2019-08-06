@@ -10,12 +10,21 @@ public class PrizeServiceImplmented implements PrizeService {
 
 		switch (accountNumber.charAt(0)) {
 		case 'A':
-			return "You Won $50";
+			return "You Won $0";
 		case 'B':
-			return "You Won $100";
+			if (accountNumber.length() == 7) {
+				return "You Won $50";
+			} else if (accountNumber.length() == 9) {
+				return "You Won $500";
+			} else
+				return "You Won $5000";
 		case 'C':
-			return "lose";
-
+			if (accountNumber.length() == 7) {
+				return "You Won $100";
+			} else if (accountNumber.length() == 9) {
+				return "You Won $750";
+			} else
+				return "You Won $10000";
 		}
 		return "";
 	}
