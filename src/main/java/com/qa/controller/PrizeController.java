@@ -18,7 +18,7 @@ public class PrizeController {
 		this.prizeService = prizeService;
 	}
 	
-	@RequestMapping("/getPrize/{accountNumber}")
+	@RequestMapping("/{accountNumber}")
 	public String prizeGenerator(@PathVariable String accountNumber) {
 		return prizeService.prizeGenerator(accountNumber);
 	}
