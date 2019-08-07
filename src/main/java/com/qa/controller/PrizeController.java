@@ -11,8 +11,12 @@ import com.qa.service.PrizeService;
 @RequestMapping("/prize")
 public class PrizeController {
 	
+	private PrizeService prizeService;
+	
 	@Autowired
-	public PrizeService prizeService;
+	public PrizeController(PrizeService prizeService) {
+		this.prizeService = prizeService;
+	}
 	
 	@RequestMapping("/getPrize/{accountNumber}")
 	public String prizeGenerator(@PathVariable String accountNumber) {

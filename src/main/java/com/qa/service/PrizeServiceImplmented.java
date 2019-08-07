@@ -8,25 +8,36 @@ public class PrizeServiceImplmented implements PrizeService {
 	@Override
 	public String prizeGenerator(String accountNumber) {
 
+		String result = "";
+
 		switch (accountNumber.charAt(0)) {
-		case 'A':
-			return "You Won $0";
-		case 'B':
+		case 'a':
+			result = "You Won $0";
+			break;
+		case 'b':
 			if (accountNumber.length() == 7) {
-				return "You Won $50";
+				result = "You Won $50";
+				break;
 			} else if (accountNumber.length() == 9) {
-				return "You Won $500";
-			} else
-				return "You Won $5000";
-		case 'C':
+				result = "You Won $500";
+				break;
+			} else {
+				result = "You Won $5000";
+				break;
+			}
+		case 'c':
 			if (accountNumber.length() == 7) {
-				return "You Won $100";
+				result = "You Won $100";
+				break;
 			} else if (accountNumber.length() == 9) {
-				return "You Won $750";
-			} else
-				return "You Won $10000";
+				result = "You Won $750";
+				break;
+			} else {
+				result = "You Won $10000";
+				break;
+			}
 		}
-		return "";
+		return result;
 	}
 
 }
